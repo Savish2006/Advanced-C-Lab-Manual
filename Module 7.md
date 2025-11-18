@@ -8,9 +8,9 @@ Algorithm:
 2.	Declare variable e of type eligible
 3.	Input age and name using scanf, store in e
 4.	If e.age <= 6
--	Print "Vaccine Eligibility: No"
+	Print "Vaccine Eligibility: No"
 Else
--	Print "Vaccine Eligibility: Yes"
+	Print "Vaccine Eligibility: Yes"
 5.	Print details (e.age, e.n)
 6.	Return 0
  
