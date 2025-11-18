@@ -15,16 +15,42 @@ Else
 6.	Return 0
  
 Program:
+```
+#include <stdio.h>
 
-//type your code here
+struct person {
+    int age;
+    char name[100];
+};
+
+int main() {
+    struct person arr[1];
+
+    if (scanf("%d", &arr[0].age) != 1) return 0;
+    if (scanf("%s", arr[0].name) != 1) return 0;
+
+    printf("Age:%d\n", arr[0].age);
+    printf("Name:%s", arr[0].name);
+    printf("vaccine:%d\n", arr[0].age);
+    if (arr[0].age > 18)
+        printf("eligibility:yes\n");
+    else
+        printf("eligibility:no\n");
+
+    return 0;
+}
+```
+
 
 
 Output:
 
-//paste your output here
+<img width="850" height="315" alt="image" src="https://github.com/user-attachments/assets/3a61d41d-f1ae-4e27-85bf-29902f910d9b" />
+
 
 
 Result:
+
 Thus, the program is verified successfully. 
 
 
@@ -43,21 +69,41 @@ Algorithm:
 7.	Return 0
  
 Program:
-
-//type your code here
+```
+#include <stdio.h>
+struct addition
+{
+    int a,b;
+    int result;
+    
+};
+int add(struct addition a1)
+{
+    a1.result=a1.a+a1.b;
+    return a1.result;
+}
+int main()
+{   
+    struct addition a1;
+    scanf("%d",&a1.a);
+    scanf("%d",&a1.b);
+    printf("%d",add(a1));
+}
+```
 
 
 
 
 Output:
 
+<img width="852" height="401" alt="image" src="https://github.com/user-attachments/assets/00297846-59b7-43cb-94c4-5820855a6421" />
 
-//paste your output here
 
 
 
 
 Result:
+
 Thus, the program is verified successfully
 
 
@@ -85,8 +131,26 @@ Use scanf to input the file name into the name array.
 5.	Return 0 to indicate successful program execution.
  
 Program:
+```
+#include <stdio.h>
 
-//type your code here
+int main() {
+    char filename[50];
+    FILE *fp;
+    scanf("%s", filename);
+    fp = fopen(filename, "w");
+
+    if (fp == NULL) {
+        printf("Error in creating file");
+        return 1;
+    }
+    printf("%s File Created Successfully\n", filename);
+    printf("%s File Opened\n", filename);
+    fclose(fp);
+    printf("%s File Closed", filename);
+    return 0;
+}
+```
 
 
 
@@ -94,7 +158,8 @@ Program:
 Output:
 
 
-//paste your output here
+<img width="836" height="478" alt="image" src="https://github.com/user-attachments/assets/163b8954-0514-4439-86a0-fe7f8cfbd720" />
+
 
 
 
@@ -107,6 +172,7 @@ Output:
 
 
 Result:
+
 Thus, the program is verified successfully
  
 
@@ -132,8 +198,34 @@ Use scanf to input the file name into the name array and the number of strings i
 5.	Return 0 to indicate successful program execution.
  
 Program:
+```
+#include <stdio.h>
 
-//type your code here
+int main() {
+    char filename[50];
+    FILE *fp;
+    int n;
+    char text[100];
+    scanf("%s", filename);
+    fp = fopen(filename, "w");
+
+    if (fp == NULL) {
+        printf("Error in creating file");
+        return 1;
+    }
+    scanf("%d", &n);
+    for (int i = 0; i < n; i++) {
+        scanf("%s", text);
+        fprintf(fp, "%s\n", text);
+    }
+
+    printf("%s Opened\n", filename);
+    printf("Data added Successfully");
+    fclose(fp);
+    return 0;
+}
+```
+
 
 
 
@@ -141,7 +233,8 @@ Program:
 Output:
 
 
-//paste your output here
+<img width="832" height="442" alt="image" src="https://github.com/user-attachments/assets/be0f378d-32db-404c-9eb8-dbb0a6a2cfdd" />
+
 
 
 
@@ -153,41 +246,62 @@ Thus, the program is verified successfully
 
 
 
-Ex No 5 : C PROGRAM TO DISPLAY STUDENT DETAILS USING STRUCTURE
-
+Ex No 5 :  C program to find the biggest among three numbers using structure?
 Aim:
-The aim of this program is to dynamically allocate memory to store information about multiple subjects (name and marks), input the details for each subject, and then display the stored information. Finally, it frees the allocated memory to prevent memory leaks.
-
+The aim of this program is to  C program to find the biggest among three numbers using structure?
 Algorithm:
 1.Input the number of subjects.
 
-2.Read the integer value n from the user, which represents the number of subjects.
+2.Declare a structure Numbers with fields a, b, c. Create a variable n of that type.
 
-3.Dynamically allocate memory:
+3.Declare an integer variable biggest to hold the result.
 
-4.Use malloc to allocate memory for n subjects. Each subject has a name (array of characters) and marks (integer).
+4.Read three integers from input and store them in n.a, n.b, n.c.
 
-5.If memory allocation fails (i.e., the pointer s is NULL), display an error message and exit the program.
+5.Compare n.a with n.b and n.c:
 
-6.Input the details of each subject
+6.If n.a is greater than or equal to both n.b and n.c, set biggest = n.a.
 
-7.Use a for loop to read the name and marks of each subject using scanf. For each subject, store the name as a string and marks as an integer in the dynamically allocated memory.
+7.Otherwise, compare n.b with n.a and n.c:
 
-8.Display the details of each subject
+8.If n.b is greater than or equal to both n.a and n.c, set biggest = n.b.
 
-9.Use another for loop to print the name and marks of each subject.
+9.Otherwise (neither a nor b was the largest), set biggest = n.c.
 
-10.Free the allocated memory
+10Print the value of biggest.
 
-11.After all operations are done, call free(s) to release the dynamically allocated memory.
-
-12.Return from the main function
-
-13.End the program by returning 0.
+11.End the program by returning 0.
 
 Program:
+```
+#include <stdio.h>
 
-//type your code here
+
+struct Numbers {
+    int a, b, c;
+};
+
+int main() {
+    struct Numbers n;
+    int biggest;
+
+    
+    scanf("%d %d %d", &n.a, &n.b, &n.c);
+
+  
+    if (n.a >= n.b && n.a >= n.c)
+        biggest = n.a;
+    else if (n.b >= n.a && n.b >= n.c)
+        biggest = n.b;
+    else
+        biggest = n.c;
+
+
+    printf("%d", biggest);
+
+    return 0;
+}
+```
 
 
 
@@ -195,7 +309,8 @@ Program:
 Output:
 
 
-//paste your output here
+<img width="827" height="311" alt="image" src="https://github.com/user-attachments/assets/493701e3-886b-41b7-9e0f-0c779d02e0bf" />
+
 
 
 
