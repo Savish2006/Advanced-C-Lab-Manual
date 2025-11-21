@@ -1,8 +1,11 @@
-EXP NO:11 C PROGRAM TO DISPLAY STACK ELEMENTS USING AN ARRAY.
+SAVISH R
+212224230257
+## EXP NO:11 C PROGRAM TO DISPLAY STACK ELEMENTS USING AN ARRAY.
 
-Aim:
+### Aim:
 To write a C program to display stack elements using an array.
-Algorithm:
+
+### Algorithm:
 1.	Include Necessary Header Files
 2.	Declare Global Variables
 3.	Define the Display Function
@@ -11,102 +14,158 @@ Algorithm:
 6.	Perform stack operations (push, pop, etc.).
 7.	Use the display function to visualize the stack's contents
  
-Program:
+### Program:
+~~~
+int stack[40],top,i;
+void display()
+{
+   for(i=top;i>=0;i--)
+   {
+      printf("%d\n",stack[i]);
+   }
+}
+~~~
 
-//type your code here
-
-Output:
-
-//paste your output here
+### Output:
 
 
+<img width="233" height="421" alt="437302372-2d2dc82c-9928-4f8f-a07c-9a4c31f67028" src="https://github.com/user-attachments/assets/2208fafa-ffeb-4a6a-abb9-d3916154e2a1" />
 
-Result:
+
+
+### Result:
+
 Thus, the program to display stack elements using an array is verified successfully.
- 
+ ---
 
-EXP NO:12  PROGRAM TO PUSH THE GIVEN ELEMENT IN TO A STACK USING ARRAY.
-Aim:
+## EXP NO:12  PROGRAM TO PUSH THE GIVEN ELEMENT IN TO A STACK USING ARRAY.
+### Aim:
 To create a C program to push the given element in to a stack using array.
-Algorithm:
+
+### Algorithm:
 1.	Declare global variables for the stack size, top index, and the stack itself.
 2.	Define the push function to add a floating-point number to the stack.
 3.	Initialize the stack size, top index, and the stack itself.
 4.	Call the push function as needed.
  
-Program:
+### Program:
+~~~
+int size=3,top=1;
+float stack[40];
+void push (float data)
+{
+   if (top==size-1 )
+   {
+      printf("stack is full\n");
+   }
+   else
+   {
+      top ++;
+      stack[top] = data;
+   }
+}
+~~~
 
-//type your code here
+### Output:
 
-Output:
-
-//paste your output here
+<img width="434" height="373" alt="437302632-ebcbb468-1e9b-4f3d-903b-9156c1269bb2" src="https://github.com/user-attachments/assets/41c29ed4-6b44-45ab-add8-6fd6ccb7313f" />
 
 
 
 
-Result:
+### Result:
 Thus, the program to push the given element in to a stack using array is verified successfully
 
 
  
-EXP NO:13 C PROGRAM TO DISPLAY QUEUE ELEMENTS USING ARRAY.
-Aim:
+## EXP NO:13 C PROGRAM TO DISPLAY QUEUE ELEMENTS USING ARRAY.
+### Aim:
 To write a C program to display queue elements using array
 
-Algorithm:
+### Algorithm:
 1.	Declare global variables for the queue, rear, front, and iteration.
 2.	Define the display function to print the elements of the queue.
 3.	Initialize the queue, rear, and front as needed.
 4.	Call the display function and perform other queue operations as needed.
  
-Program:
+### Program:
+~~~
+int queue[50], rear, front,i;
+void display()
+{
+   if(front==-1)
+   {
+      printf("No elements to display");
+   }
+   else
+   {
+     for(i=front;i<=rear;i++)
+     {
+       printf("%d ",queue[i]);
+     }
+   }
+}
+~~~
 
-//type your code here
-
-Output:
-
-//paste your output here
+### Output:
 
 
-Result:
+<img width="472" height="387" alt="437302999-2d892bf2-90fc-4fd4-95ee-0c6cfcfa51e5" src="https://github.com/user-attachments/assets/30c4f3bf-6381-4297-b582-4d87c3c96129" />
+
+
+### Result:
+
 Thus, the program to display queue elements using array is verified successfully.
 
-
+---
  
-EXP NO:14 C PROGRAM TO INSERT ELEMENTS IN QUEUE USING ARRAY.
-Aim:
+## EXP NO:14 C PROGRAM TO INSERT ELEMENTS IN QUEUE USING ARRAY.
+### Aim:
 To write a C program to insert elements in queue using array.
 
-Algorithm:
+### Algorithm:
 1.	Declare global variables for the size, rear, front, and the queue itself.
 2.	Define the enqueue function to add a float to the queue.
 3.	Initialize the rear, front, and size of the queue as needed.
 4.	Call the enqueue function as needed.
 
-Program:
+### Program:
+~~~
+int size=4, rear=-1, front=-1;
+float queue[50];
+void enqueue(float data)
+{
+   if(rear<size)
+   {
+     if(front==-1)
+     {
+        front=0;
+     }
+     rear=rear+1;
+     queue[rear]=data;
+    }
+}
+~~~
 
-//type your code here
+### Output:
 
-Output:
 
-//paste your output here
+<img width="542" height="285" alt="437303112-7bc7dc0b-c050-4d3f-ac75-6cdc64c2fbd3" src="https://github.com/user-attachments/assets/b2e1953f-a57e-4c9d-8ce3-fab447cca047" />
 
-Result:
+### Result:
+
 Thus, the program to insert elements in queue using array is verified successfully.
-
+---
 
 
  
-EXP NO:15 C FUNCTION TO DELETE ELEMENTS IN QUEUE USING ARRAY
+## EXP NO:15 C FUNCTION TO DELETE ELEMENTS IN QUEUE USING ARRAY
 
-
-
-Aim:
+### Aim:
 
 To create a function in C that deletes an element from a queue implemented using an array.
 
-Algorithm:
+### Algorithm:
 
 1.	Check if the Queue is Empty
 o	If the front pointer is -1, it means the queue is empty, and there are no elements to delete. Print a message indicating that the queue is empty.
@@ -119,14 +178,27 @@ o	After deletion, check if the front pointer has passed the rear pointer (front 
 
 
 
-Program:
+### Program:
+~~~
+int front, rear;
+void dequeue()
+{
+    if(front==-1&&rear==-1)
+    printf("Queue Underflow.");
+    else if(front==rear)
+    front=rear=-1;
+    else
+    {
+        front=front+1;
+    }
+}
+~~~
 
-//type your code here
+### Output:
 
-Output:
-
-//paste your output here
+<img width="945" height="769" alt="437303515-5de5ee70-9217-4f6a-b3cd-7f800bafd855" src="https://github.com/user-attachments/assets/f73da452-d244-4aeb-a832-b600066c70b9" />
 
 
-Result:
+### Result:
 Thus, the function that deletes an element from a queue implemented using an array is verified successfully.
+---
